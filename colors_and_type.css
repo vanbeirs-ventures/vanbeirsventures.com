@@ -1,0 +1,174 @@
+/* ============================================================
+   VAN BEIRS — Foundations: Color & Type
+   Institutional investment management & financial products.
+   Monochrome ink-on-paper base, sharp geometry, per-division
+   accents, monospaced financial figures.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Brand fonts ----
+     Display/wordmark : Montserrat  (closest Google Font to the VAN BEIRS wordmark — SUBSTITUTION, see README)
+     Text/UI          : IBM Plex Sans
+     Figures/data     : IBM Plex Mono (tabular € amounts, %, multiples) */
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-text:    "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, monospace;
+
+  /* ============== INK / NEUTRAL SCALE ============== */
+  --ink-900: #0A0A0A;   /* wordmark black — primary ink */
+  --ink-800: #1A1A1C;
+  --ink-700: #2B2B2F;
+  --ink-600: #45454C;
+  --ink-500: #6B6B73;   /* secondary text */
+  --ink-400: #9A9AA2;   /* tertiary / muted */
+  --ink-300: #C7C7CD;   /* disabled */
+  --ink-200: #E2E2E5;   /* hairline / divider */
+  --ink-150: #ECECEE;
+  --ink-100: #F4F4F3;   /* subtle fill */
+  --paper:   #FFFFFF;   /* primary surface */
+  --paper-2: #FAFAF8;   /* off-white canvas */
+
+  /* ============== DIVISION ACCENTS ============== */
+  /* Sampled directly from the official division logos. */
+  --ventures:        #982598;   /* Van Beirs Ventures — purple */
+  --ventures-ink:    #6E1A6E;   /* darker, for text-on-paper legibility */
+  --finance:         #5409DA;   /* Van Beirs Finance — electric violet */
+  --finance-ink:     #4408AE;
+  --realestate:      #EB5A3C;   /* Van Beirs Real Estate — coral */
+  --realestate-ink:  #C8431F;
+  --holding:         #0A0A0A;   /* Van Beirs Holding — ink */
+
+  /* Primary brand accent = Ventures purple (the management entity) */
+  --accent:          var(--ventures);
+  --accent-ink:      var(--ventures-ink);
+  --accent-wash:     #F7ECF7;   /* tint surface */
+
+  /* ============== SEMANTIC (DATA) ============== */
+  --positive:    #1F7A4D;   /* + cash flow, gains */
+  --positive-bg: #ECF5F0;
+  --negative:    #B23A2E;   /* - cash flow, drawdown */
+  --negative-bg: #F8ECEA;
+  --neutral-fig: var(--ink-700);
+  --confidential:#B23A2E;   /* "STRICTLY CONFIDENTIAL" marking */
+
+  /* ============== LINES & ELEVATION ============== */
+  --hairline:  #E2E2E5;
+  --rule:      #0A0A0A;          /* heavy editorial rule */
+  --border:    1px solid var(--hairline);
+  --border-ink:1px solid var(--ink-900);
+
+  /* Sharp, institutional — minimal rounding */
+  --radius-0: 0px;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-pill: 999px;
+
+  /* Restrained elevation — finance docs sit flat on paper */
+  --shadow-1: 0 1px 2px rgba(10,10,10,0.06);
+  --shadow-2: 0 4px 16px rgba(10,10,10,0.08);
+  --shadow-3: 0 18px 48px rgba(10,10,10,0.12);
+
+  /* ============== SPACING (8px base) ============== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ============== TYPE SCALE ============== */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   22px;
+  --text-xl:   28px;
+  --text-2xl:  36px;
+  --text-3xl:  48px;
+  --text-4xl:  64px;
+  --text-5xl:  84px;
+
+  /* Eyebrow / label tracking — the brand's signature wide caps */
+  --track-eyebrow: 0.22em;
+  --track-wordmark: 0.30em;
+  --track-tight: -0.01em;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   Apply via classes; or copy the declarations into your own.
+   ============================================================ */
+
+/* Eyebrow / section kicker — wide-tracked uppercase (brand signature) */
+.vb-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+/* Display headline — wordmark-flavoured */
+.vb-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-4xl);
+  line-height: 1.02;
+  letter-spacing: var(--track-tight);
+  color: var(--ink-900);
+}
+
+.vb-h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-3xl); line-height: 1.06; letter-spacing: var(--track-tight); color: var(--ink-900); }
+.vb-h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-2xl); line-height: 1.1;  letter-spacing: var(--track-tight); color: var(--ink-900); }
+.vb-h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl);  line-height: 1.15; color: var(--ink-900); }
+.vb-h4 { font-family: var(--font-text);    font-weight: 600; font-size: var(--text-lg);  line-height: 1.25; color: var(--ink-900); }
+
+.vb-lead { font-family: var(--font-text); font-weight: 400; font-size: var(--text-md); line-height: 1.6; color: var(--ink-600); }
+.vb-p    { font-family: var(--font-text); font-weight: 400; font-size: var(--text-base); line-height: 1.65; color: var(--ink-700); }
+.vb-small{ font-family: var(--font-text); font-weight: 400; font-size: var(--text-sm); line-height: 1.5; color: var(--ink-500); }
+
+/* Fine print / confidential footer */
+.vb-fine { font-family: var(--font-text); font-weight: 400; font-size: var(--text-xs); line-height: 1.45; color: var(--ink-400); letter-spacing: 0.01em; }
+
+/* Financial figure — the hero number */
+.vb-figure {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+.vb-figure-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+/* Tabular data cell */
+.vb-data {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-800);
+}
+
+/* Wordmark lockup helper */
+.vb-wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: var(--track-wordmark);
+  text-transform: uppercase;
+  color: var(--ink-900);
+}
