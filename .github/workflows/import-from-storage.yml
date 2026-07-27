@@ -1,0 +1,52 @@
+name: One-time import from Bunny Storage
+
+on:
+  workflow_dispatch: {}
+
+env:
+  STORAGE_ZONE_ID: "1692144"
+  STORAGE_ZONE_NAME: "vanbeirsventures"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all files from the storage zone
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+        run: |
+          set -euo pipefail
+          SK=$(curl -fsS -H "AccessKey: $BUNNY_API_KEY" "https://api.bunny.net/storagezone/$STORAGE_ZONE_ID" | python3 -c 'import sys,json;print(json.load(sys.stdin)["Password"])')
+          fetch_dir() {
+            local dir="$1"
+            curl -fsS -H "AccessKey: $SK" "https://storage.bunnycdn.com/$STORAGE_ZONE_NAME/${dir}" \
+              | python3 -c 'import sys,json
+for e in json.load(sys.stdin):
+    print(("D" if e["IsDirectory"] else "F") + e["ObjectName"])' \
+              | while IFS= read -r line; do
+                  kind="${line:0:1}"; name="${line:1}"
+                  if [ "$kind" = "D" ]; then
+                    mkdir -p "${dir}${name}"
+                    fetch_dir "${dir}${name}/"
+                  else
+                    echo "GET ${dir}${name}"
+                    curl -fsS -H "AccessKey: $SK" -o "${dir}${name}" \
+                      "https://storage.bunnycdn.com/$STORAGE_ZONE_NAME/${dir}${name}"
+                  fi
+                done
+          }
+          fetch_dir ""
+
+      - name: Commit imported files
+        run: |
+          set -euo pipefail
+          git config user.name  'bunny-import[bot]'
+          git config user.email 'bunny-import@users.noreply.github.com'
+          git add -A
+          git commit -m 'Import current live site from Bunny Storage [skip deploy]' || echo 'Nothing to commit'
+          git push
