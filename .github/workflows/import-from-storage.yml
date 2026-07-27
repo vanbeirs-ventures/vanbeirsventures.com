@@ -25,9 +25,7 @@ jobs:
           fetch_dir() {
             local dir="$1"
             curl -fsS -H "AccessKey: $SK" "https://storage.bunnycdn.com/$STORAGE_ZONE_NAME/${dir}" \
-              | python3 -c 'import sys,json
-for e in json.load(sys.stdin):
-    print(("D" if e["IsDirectory"] else "F") + e["ObjectName"])' \
+              | python3 -c 'import sys,json;[print(("D" if e["IsDirectory"] else "F")+e["ObjectName"]) for e in json.load(sys.stdin)]' \
               | while IFS= read -r line; do
                   kind="${line:0:1}"; name="${line:1}"
                   if [ "$kind" = "D" ]; then
