@@ -15,7 +15,7 @@ const WEB_PORTFOLIO = [
   { ci:3, nm:'NOUARD', logo:'assets/logos/nouard.png', sm:true, sc:'Luxury Gifting', c:'var(--finance-ink)' },
   { ci:4, nm:'Campo', sc:'Field-to-Fork', c:'var(--finance-ink)' },
   { ci:5, nm:'EBURIX', sc:'Defence · Autonomous Systems', c:'var(--realestate-ink)' },
-  { ci:6, nm:'Clavoris', logo:'assets/logos/clavoris.png', square:true, sm:true, sc:'Distributed Ledger Technology', c:'var(--finance-ink)', href:'clavoris/' },
+  { ci:6, nm:'Clavoris', logo:'assets/logos/clavoris.png', square:true, sm:true, sc:'Distributed Ledger Technology', c:'var(--finance-ink)', href:'clavoris/index.html' },
   { ci:9, nm:'BelinusAI', logo:'assets/logos/belinus-ai.png', sm:true, sc:'Energy Management', c:'var(--finance-ink)' },
   { ci:10, nm:'Telepath', logo:'assets/logos/telepath.png', md:true, sc:'Application Framework · AI · IoT', c:'var(--finance-ink)' },
   { ci:16, nm:'Memorable', mark:'assets/logos/memorable.png', sc:'Wine', c:'var(--ventures-ink)' },
