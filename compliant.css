@@ -35,8 +35,16 @@
 .pcell .lg{max-height:34px;width:auto;max-width:100%;display:block;object-fit:contain}
 .pcell .lg.tall{max-height:84px;height:auto;width:auto;max-width:215px}
 .pcell .lg.square{max-height:84px;height:auto;width:auto}
+.pcell .lg.square.sm{max-height:64px}
 .pcell .lg.sm{max-height:15px;max-width:112px}
+.pcell .lg.md{max-height:26px;max-width:150px}
+.pcell .lg.lg2{max-height:34px;max-width:215px}
 .pcell .lg.tall.sm{max-height:52px;max-width:150px}
+.pcell .vblock{display:flex;align-items:center;gap:12px}
+.pcell .vbmk{height:36px;width:36px;object-fit:contain;flex:none}
+.pcell .vbtx{text-align:left;line-height:1}
+.pcell .vbw{font-family:var(--font-display);font-weight:800;font-size:23px;letter-spacing:.03em;color:var(--ink-900)}
+.pcell .vbd{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.26em;color:var(--realestate);margin-top:5px}
 .pcell .lgrow{display:flex;align-items:center;gap:12px}
 .pcell .mk{height:42px;width:42px;object-fit:contain;flex:none}
 .pcell .lgrow .nm{font-size:19px;line-height:1.15}

@@ -30,7 +30,7 @@ window.COMPLIANT = {
       { h:'Documentation', p:'Where eligibility is established, documentation is provided directly and under a confidentiality undertaking.' },
     ],
     ir_contact_pre:'Requests: ',
-    e_investments:'Group portfolio', t_investments:'Operating companies',
+    e_investments:'', t_investments:'Group portfolio',
     inv_note:'Portfolio descriptions are corporate information about the group’s shareholdings. They are not offers of, or advertisements for, any financial instrument, and contain no indication of past, simulated or expected performance.',
     portfolio_over:{
       2:{ desc:'A Belgian heritage luxury car brand founded in 1897 and reborn to offer the ultimate luxury experience and technical innovation.' },
@@ -99,7 +99,7 @@ window.COMPLIANT = {
       { h:'Documentatie', p:'Indien de hoedanigheid vaststaat, wordt de documentatie rechtstreeks en onder vertrouwelijkheidsverbintenis verstrekt.' },
     ],
     ir_contact_pre:'Aanvragen: ',
-    e_investments:'Groepsportefeuille', t_investments:'Operationele ondernemingen',
+    e_investments:'', t_investments:'Groepsportefeuille',
     inv_note:'De portefeuillebeschrijvingen zijn vennootschapsinformatie over de participaties van de groep. Zij zijn geen aanbod van, noch reclame voor, enig financieel instrument en bevatten geen indicatie van in het verleden behaalde, gesimuleerde of verwachte resultaten.',
     portfolio_over:{
       2:{ desc:'Een Belgisch luxeautomerk met erfgoed, opgericht in 1897 en herboren om de ultieme luxe-ervaring en technische innovatie te bieden.' },
@@ -168,7 +168,7 @@ window.COMPLIANT = {
       { h:'Documentation', p:'Lorsque l’éligibilité est établie, la documentation est transmise directement et sous engagement de confidentialité.' },
     ],
     ir_contact_pre:'Demandes : ',
-    e_investments:'Portefeuille du groupe', t_investments:'Sociétés opérationnelles',
+    e_investments:'', t_investments:'Portefeuille du groupe',
     inv_note:'Les descriptions de portefeuille constituent une information sur les participations du groupe. Elles ne sont ni une offre ni une publicité relative à un instrument financier et ne comportent aucune indication de performance passée, simulée ou attendue.',
     portfolio_over:{
       2:{ desc:'Une marque automobile de luxe belge au riche patrimoine, fondée en 1897 et renée pour offrir l’expérience de luxe ultime et l’innovation technique.' },

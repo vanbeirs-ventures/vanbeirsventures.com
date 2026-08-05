@@ -9,22 +9,22 @@ const { useState } = React;
 
 /* ci = index into the localised portfolio copy in content.js */
 const WEB_PORTFOLIO = [
-  { ci:0, nm:'Belinus', logo:'assets/logos/belinus.png', sm:true, sc:'Energy Innovations', c:'var(--finance-ink)' },
-  { ci:1, nm:'Charles Fontana', logo:'assets/logos/charles-fontana.png', tall:true, sc:'Haute Joaillerie', c:'var(--ventures-ink)' },
-  { ci:2, nm:'MINERVA Luxury Motors', mark:'assets/logos/minerva.png', sc:'Ultra-Luxury Automotive', c:'var(--ventures-ink)' },
+  { ci:0, nm:'Belinus', logo:'assets/logos/belinus.png', md:true, sc:'Energy Innovations', c:'var(--finance-ink)' },
+  { ci:1, nm:'Charles Fontana', logo:'assets/logos/charles-fontana.png', lg2:true, sc:'Haute Joaillerie', c:'var(--ventures-ink)' },
+  { ci:2, nm:'MINERVA Luxury Motors', logo:'assets/logos/minerva-luxury-motors.png', tall:true, sm:true, sc:'Ultra-Luxury Automotive', c:'var(--ventures-ink)' },
   { ci:3, nm:'NOUARD', logo:'assets/logos/nouard.png', sm:true, sc:'Luxury Gifting', c:'var(--finance-ink)' },
   { ci:4, nm:'Campo', sc:'Field-to-Fork', c:'var(--finance-ink)' },
   { ci:5, nm:'EBURIX', sc:'Defence · Autonomous Systems', c:'var(--realestate-ink)' },
-  { ci:6, nm:'Clavoris', logo:'assets/logos/clavoris.png', square:true, sc:'Distributed Ledger Technology', c:'var(--finance-ink)' },
+  { ci:6, nm:'Clavoris', logo:'assets/logos/clavoris.png', square:true, sm:true, sc:'Distributed Ledger Technology', c:'var(--finance-ink)' },
   { ci:9, nm:'BelinusAI', logo:'assets/logos/belinus-ai.png', sm:true, sc:'Energy Management', c:'var(--finance-ink)' },
-  { ci:10, nm:'Telepath', logo:'assets/logos/telepath.png', sm:true, sc:'Application Framework · AI · IoT', c:'var(--finance-ink)' },
+  { ci:10, nm:'Telepath', logo:'assets/logos/telepath.png', md:true, sc:'Application Framework · AI · IoT', c:'var(--finance-ink)' },
   { ci:16, nm:'Memorable', mark:'assets/logos/memorable.png', sc:'Wine', c:'var(--ventures-ink)' },
-  { ci:15, nm:'FARALAES', logo:'assets/logos/faralaes.png', tall:true, sc:'Olive Oil', c:'var(--ventures-ink)' },
-  { ci:13, nm:'rhythm', logo:'assets/logos/rhythm.png', sm:true, sc:'Mobility Platform', c:'var(--finance-ink)' },
+  { ci:15, nm:'FARALAES', logo:'assets/logos/faralaes.png', tall:true, sm:true, sc:'Olive Oil', c:'var(--ventures-ink)' },
+  { ci:13, nm:'rhythm', logo:'assets/logos/rhythm.png', md:true, sc:'Mobility Platform', c:'var(--finance-ink)' },
   { ci:14, nm:'technoconstrukt', logo:'assets/logos/technoconstrukt.png', sm:true, sc:'Construction', c:'var(--realestate-ink)' },
   { ci:12, nm:'Like Watering Cans', logo:'assets/logos/like-watering-cans.png', tall:true, sm:true, sc:'Marketing Intelligence', c:'var(--ventures-ink)' },
   { ci:11, nm:'Gracia Sistemas', logo:'assets/logos/gracia-sistemas.png', sc:'Wine & Spirits Technology', c:'var(--ventures-ink)' },
-  { ci:8, nm:'Van Beirs Real Estate', sc:'Prime RE · Branded Residences', c:'var(--realestate-ink)' },
+  { ci:8, nm:'Van Beirs Real Estate', vbLockup:'REAL ESTATE', sc:'Prime RE · Branded Residences', c:'var(--realestate-ink)' },
 ];
 const NAV = ['about','history','ir','investments','login'];
 const langs = () => window.LANGS_C && window.LANGS_C.length ? window.LANGS_C : window.LANGS;
@@ -271,8 +271,10 @@ function Investments({ t }) {
             return (
               <div className="pcell" key={p.nm}>
                 <div className="phead">
-                  {p.logo
-                    ? <img className={'lg'+(p.tall?' tall':'')+(p.square?' square':'')+(p.sm?' sm':'')} src={p.logo} alt={p.nm} />
+                  {p.vbLockup
+                    ? <div className="vblock"><img className="vbmk" src="assets/vb-emblem-black.png" alt="" /><div className="vbtx"><div className="vbw">VAN BEIRS</div><div className="vbd">{p.vbLockup}</div></div></div>
+                    : p.logo
+                    ? <img className={'lg'+(p.tall?' tall':'')+(p.square?' square':'')+(p.sm?' sm':'')+(p.md?' md':'')+(p.lg2?' lg2':'')} src={p.logo} alt={p.nm} />
                     : p.mark
                       ? <div className="lgrow"><img className="mk" src={p.mark} alt="" /><div className="nm">{p.nm}</div></div>
                       : <div className="nm">{p.nm}</div>}
