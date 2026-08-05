@@ -2,7 +2,7 @@
 const { useState, useEffect, useCallback } = React;
 
 const PAGES = { home:'Home', about:'About', history:'History', ir:'InvestorRelations', investments:'Investments', login:'Login', privacy:'Privacy', terms:'Terms' };
-const ALLOWED_LANGS = ['en','nl','fr'];
+const ALLOWED_LANGS = ['en','nl','fr','zh','ja'];
 
 function pageFromHash() {
   const h = (location.hash || '').replace(/^#\/?/, '');
