@@ -49,6 +49,8 @@
 .pcell .mk{height:42px;width:42px;object-fit:contain;flex:none}
 .pcell .lgrow .nm{font-size:19px;line-height:1.15}
 .pcell .sc{min-height:26px}
+.pcell-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;cursor:pointer}
+.pcell-link:hover{background:var(--paper-2)}
 a{color:var(--ventures-ink)}
 a:hover{color:var(--ink-900)}
 /* burger top-left, wordmark centred */

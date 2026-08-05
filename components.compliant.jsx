@@ -10,12 +10,12 @@ const { useState } = React;
 /* ci = index into the localised portfolio copy in content.js */
 const WEB_PORTFOLIO = [
   { ci:0, nm:'Belinus', logo:'assets/logos/belinus.png', md:true, sc:'Energy Innovations', c:'var(--finance-ink)' },
-  { ci:1, nm:'Charles Fontana', logo:'assets/logos/charles-fontana.png', lg2:true, sc:'Haute Joaillerie', c:'var(--ventures-ink)' },
+  { ci:1, nm:'Charles Fontana', logo:'assets/logos/charles-fontana.png', lg2:true, sc:'Haute Joaillerie', c:'var(--ventures-ink)', href:'https://www.charlesfontana.com/' },
   { ci:2, nm:'MINERVA Luxury Motors', logo:'assets/logos/minerva-luxury-motors.png', tall:true, sm:true, sc:'Ultra-Luxury Automotive', c:'var(--ventures-ink)' },
   { ci:3, nm:'NOUARD', logo:'assets/logos/nouard.png', sm:true, sc:'Luxury Gifting', c:'var(--finance-ink)' },
   { ci:4, nm:'Campo', sc:'Field-to-Fork', c:'var(--finance-ink)' },
   { ci:5, nm:'EBURIX', sc:'Defence · Autonomous Systems', c:'var(--realestate-ink)' },
-  { ci:6, nm:'Clavoris', logo:'assets/logos/clavoris.png', square:true, sm:true, sc:'Distributed Ledger Technology', c:'var(--finance-ink)' },
+  { ci:6, nm:'Clavoris', logo:'assets/logos/clavoris.png', square:true, sm:true, sc:'Distributed Ledger Technology', c:'var(--finance-ink)', href:'clavoris/' },
   { ci:9, nm:'BelinusAI', logo:'assets/logos/belinus-ai.png', sm:true, sc:'Energy Management', c:'var(--finance-ink)' },
   { ci:10, nm:'Telepath', logo:'assets/logos/telepath.png', md:true, sc:'Application Framework · AI · IoT', c:'var(--finance-ink)' },
   { ci:16, nm:'Memorable', mark:'assets/logos/memorable.png', sc:'Wine', c:'var(--ventures-ink)' },
@@ -268,8 +268,8 @@ function Investments({ t }) {
           {WEB_PORTFOLIO.map((p)=>{
             const base = (t.portfolio && t.portfolio[p.ci]) || {};
             const over = (t.portfolio_over && t.portfolio_over[p.ci]) || {};
-            return (
-              <div className="pcell" key={p.nm}>
+            const inner = (
+              <React.Fragment>
                 <div className="phead">
                   {p.vbLockup
                     ? <div className="vblock"><img className="vbmk" src="assets/vb-emblem-black.png" alt="" /><div className="vbtx"><div className="vbw">VAN BEIRS</div><div className="vbd">{p.vbLockup}</div></div></div>
@@ -281,8 +281,11 @@ function Investments({ t }) {
                 </div>
                 <div className="sc" style={{color:p.c}}>{over.sc || base.sc || p.sc}</div>
                 <div className="ds">{over.desc || base.desc}</div>
-              </div>
+              </React.Fragment>
             );
+            return p.href
+              ? <a className="pcell pcell-link" key={p.nm} href={p.href} target="_blank" rel="noopener noreferrer">{inner}</a>
+              : <div className="pcell" key={p.nm}>{inner}</div>;
           })}
         </div>
       </div>
