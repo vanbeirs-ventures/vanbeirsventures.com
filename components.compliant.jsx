@@ -24,7 +24,7 @@ const WEB_PORTFOLIO = [
   { ci:14, nm:'technoconstrukt', logo:'assets/logos/technoconstrukt.png', sm:true, sc:'Construction', c:'var(--realestate-ink)' },
   { ci:12, nm:'Like Watering Cans', logo:'assets/logos/like-watering-cans.png', tall:true, sm:true, sc:'Marketing Intelligence', c:'var(--ventures-ink)' },
   { ci:11, nm:'Gracia Sistemas', logo:'assets/logos/gracia-sistemas.png', sc:'Wine & Spirits Technology', c:'var(--ventures-ink)' },
-  { ci:17, nm:'Lucivu', logo:'assets/logos/lucivu.png', tall:true, sm:true, sc:'Video Platform', c:'var(--finance-ink)', href:'https://www.lucivu.com/' },
+  { ci:17, nm:'Lucivu', logo:'assets/logos/lucivu-lime.png', tall:true, sm:true, sc:'Video Platform', c:'var(--finance-ink)', href:'https://www.lucivu.com/' },
   { ci:18, nm:'EVChargeking', logo:'assets/logos/evchargeking.png', lg2:true, sc:'EV Charging', c:'var(--finance-ink)', href:'https://www.evchargeking.com/' },
   { ci:8, nm:'Van Beirs Real Estate', vbLockup:'REAL ESTATE', sc:'Prime RE · Branded Residences', c:'var(--realestate-ink)' },
 ];
